@@ -55,7 +55,10 @@ function Hero({
         if (success) {
           setIsEnable(false);
         }
-      });
+      })
+    else {
+      alert("Please login to save location");
+    }
   };
 
   return (
