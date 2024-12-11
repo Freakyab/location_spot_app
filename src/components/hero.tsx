@@ -50,13 +50,17 @@ function Hero({
   }, [location]);
 
   const handleSubmit = async (type: string) => {
-    if (userDetails.token)
+    if (userDetails.token) {
+      if (formData.houseAddress === "" || formData.aparmentAddress === "") {
+        alert("Please fill all the fields");
+        return;
+      }
       saveLocation(formData, userDetails.token, type).then((success) => {
         if (success) {
           setIsEnable(false);
         }
-      })
-    else {
+      });
+    } else {
       alert("Please login to save location");
     }
   };
