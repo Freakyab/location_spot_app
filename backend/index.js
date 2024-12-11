@@ -1,12 +1,12 @@
-const express = require("express");
-const bodyParser = require("body-parser");
-const cors = require("cors");
-const addressRouter = require("./address.controller.cjs");
-const accountRouter = require("./account.controller.cjs");
+import express from "express";
+import { json } from "body-parser";
+import cors from "cors";
+import addressRouter from "./address.controller.cjs";
+import accountRouter from "./account.controller.cjs";
 
 const PORT = process.env.PORT || 8000;
 const app = express();
-app.use(bodyParser.json());
+app.use(json());
 app.use(cors());
 
 app.get("/", (req, res) => {
